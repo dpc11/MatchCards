@@ -7,10 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "Deck.h"
+#import "PlayingCardDeck.h"
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
+@property (strong, nonatomic) Deck *deckCards;
 
 @end
 
@@ -31,17 +35,36 @@
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips : %d", self.flipCount];
 }
 
+- (Deck *)deckCards {
+    if (!_deckCards) {
+        _deckCards = [[PlayingCardDeck alloc] init];
+    }
+    return _deckCards;
+}
+
 - (IBAction)touchCardButton:(UIButton *)sender {
     if ([sender.currentTitle length]) {
         [sender setBackgroundImage:[UIImage imageNamed:@"Cardback"]
                           forState:UIControlStateNormal];
         [sender setTitle:nil forState:UIControlStateNormal];
+        
+        self.flipCount++;
     } else {
-        [sender setBackgroundImage:[UIImage imageNamed:@"Cardfront"]
-                          forState:UIControlStateNormal];
-        [sender setTitle:@"A ♣︎" forState:UIControlStateNormal];
+        Card *card = self.deckCards.drawRandomCard;
+        if (card) {
+            [sender setBackgroundImage:[UIImage imageNamed:@"Cardfront"]
+                              forState:UIControlStateNormal];
+            [sender setTitle:card.contents  forState:UIControlStateNormal];
+            
+            if ([card.contents containsString:@"♥︎"] || [card.contents containsString:@"♦︎"]) {
+                [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            } else {
+                [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            }
+            
+            self.flipCount++;
+        }
     }
-    self.flipCount++;
 }
 
 @end
