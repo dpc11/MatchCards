@@ -32,7 +32,7 @@
 
 - (void)setFlipCount:(int)flipCount {
     _flipCount = flipCount;
-    self.flipsLabel.text = [NSString stringWithFormat:@"Flips : %d", self.flipCount];
+    self.flipsLabel.text = [NSString stringWithFormat:@"翻转 : %2d", self.flipCount];
 }
 
 - (Deck *)deckCards {
