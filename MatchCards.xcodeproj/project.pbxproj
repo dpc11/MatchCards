@@ -14,6 +14,7 @@
 		EA082EFE1B46947A0061AEED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA082EFD1B46947A0061AEED /* Images.xcassets */; };
 		EA082F011B46947A0061AEED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA082EFF1B46947A0061AEED /* LaunchScreen.xib */; };
 		EA082F0D1B46947A0061AEED /* MatchCardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA082F0C1B46947A0061AEED /* MatchCardsTests.m */; };
+		EAF208021B4780DE0001D2DC /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF208011B4780DE0001D2DC /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		EA082F061B46947A0061AEED /* MatchCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA082F0B1B46947A0061AEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA082F0C1B46947A0061AEED /* MatchCardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchCardsTests.m; sourceTree = "<group>"; };
+		EAF208001B4780DE0001D2DC /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = MatchCards/Models/Card.h; sourceTree = "<group>"; };
+		EAF208011B4780DE0001D2DC /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = MatchCards/Models/Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		EA082EE41B4694790061AEED = {
 			isa = PBXGroup;
 			children = (
+				EAF208031B4780E50001D2DC /* Models */,
 				EA082EEF1B4694790061AEED /* MatchCards */,
 				EA082F091B46947A0061AEED /* MatchCardsTests */,
 				EA082EEE1B4694790061AEED /* Products */,
@@ -81,8 +85,6 @@
 		EA082EEF1B4694790061AEED /* MatchCards */ = {
 			isa = PBXGroup;
 			children = (
-				EA082EF41B4694790061AEED /* AppDelegate.h */,
-				EA082EF51B4694790061AEED /* AppDelegate.m */,
 				EA082EF71B4694790061AEED /* ViewController.h */,
 				EA082EF81B4694790061AEED /* ViewController.m */,
 				EA082EFA1B4694790061AEED /* Main.storyboard */,
@@ -96,6 +98,8 @@
 		EA082EF01B4694790061AEED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA082EF41B4694790061AEED /* AppDelegate.h */,
+				EA082EF51B4694790061AEED /* AppDelegate.m */,
 				EA082EF11B4694790061AEED /* Info.plist */,
 				EA082EF21B4694790061AEED /* main.m */,
 			);
@@ -117,6 +121,15 @@
 				EA082F0B1B46947A0061AEED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EAF208031B4780E50001D2DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAF208001B4780DE0001D2DC /* Card.h */,
+				EAF208011B4780DE0001D2DC /* Card.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +235,7 @@
 				EA082EF91B4694790061AEED /* ViewController.m in Sources */,
 				EA082EF61B4694790061AEED /* AppDelegate.m in Sources */,
 				EA082EF31B4694790061AEED /* main.m in Sources */,
+				EAF208021B4780DE0001D2DC /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +430,7 @@
 				EA082F121B46947A0061AEED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA082F131B46947A0061AEED /* Build configuration list for PBXNativeTarget "MatchCardsTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +439,7 @@
 				EA082F151B46947A0061AEED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
