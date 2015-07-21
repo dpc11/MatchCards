@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
+
+// Abstruct Class
 
 @interface ViewController : UIViewController
 
+- (Deck *)createDeck;   // Abstruct Method
 
 @end

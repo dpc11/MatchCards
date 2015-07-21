@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "Deck.h"
-#import "PlayingCardDeck.h"
 #import "MatchGame.h"
 
 @interface ViewController ()
@@ -22,17 +20,15 @@
 
 @implementation ViewController
 
-- (Deck *)deckCards {
-    if (!_deckCards) {
-        _deckCards = [[PlayingCardDeck alloc] init];
-    }
-    return _deckCards;
+// Abstruct Method
+- (Deck *)createDeck {
+    return nil;
 }
 
 - (MatchGame *)game {
     if (!_game) {
         _game = [[MatchGame alloc] initWithCardCount:[self.cardButtons count]
-                                           usingDeck:self.deckCards];
+                                           usingDeck:[self createDeck]];
     }
     return _game;
 }
@@ -45,7 +41,7 @@
 
 - (void)updateUI {
     // update score label
-    self.scoreLabel.text = [NSString stringWithFormat:@"分数:%3ld", self.game.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"分数:%3ld", (long)self.game.score];
     
     // update deck of cards
     for (UIButton *cardButton in self.cardButtons) {

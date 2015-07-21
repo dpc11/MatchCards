@@ -14,11 +14,14 @@
     int score = 0;
     
     if ([otherCards count] == 1) {
-        PlayingCard *otherCard = [otherCards firstObject];
-        if ([self.suit isEqualToString:otherCard.suit]) {
-            score = 1;
-        } else if (self.rank == otherCard.rank) {
-            score = 4;
+        id card = [otherCards firstObject];
+        if ([card isKindOfClass:[PlayingCard class]]) {
+            PlayingCard *otherCard = (PlayingCard *)card;
+            if ([self.suit isEqualToString:otherCard.suit]) {
+                score = 1;
+            } else if (self.rank == otherCard.rank) {
+                score = 4;
+            }
         }
     }
     
@@ -30,7 +33,7 @@
 }
 
 + (NSArray *)rankStrings {
-    return @[@"?", @"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K",];
+    return @[@"?", @"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
 }
 
 + (NSUInteger)maxRank {
